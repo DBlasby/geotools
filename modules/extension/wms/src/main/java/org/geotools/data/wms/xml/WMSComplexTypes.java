@@ -4834,7 +4834,7 @@ public class WMSComplexTypes {
 		 * @see org.geotools.xml.schema.Type#getValue(org.geotools.xml.schema.Element, org.geotools.xml.schema.ElementValue[], org.xml.sax.Attributes, java.util.Map)
 		 */
 		public Object getValue(Element element, ElementValue[] value, Attributes attrs, Map hints) throws SAXException, OperationNotSupportedException {
-			return new ServiceException((String)value[value.length - 1].getValue(),null);
+			return new ServiceException((String)value[value.length - 1].getValue());
 		}
 
 		/* (non-Javadoc)

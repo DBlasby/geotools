@@ -94,12 +94,24 @@ public class ServiceException extends SAXException {
     public ServiceException(String msg) {
         super(msg);
     }
-    
+
+    /**
+     * @param msg Message
+     * @see SAXException#SAXException(java.lang.String)
+     */
+    public ServiceException(String msg, Throwable cause) {
+        super(msg, cause instanceof Exception ? (Exception) cause : null );
+        initCause(cause);
+    }
     public ServiceException(String msg, String code) {
     	super(msg);
     	this.code = code;
     }
-
+    public ServiceException(String msg, String code, Throwable cause) {
+    	super(msg, cause instanceof Exception ? (Exception) cause : null );
+    	initCause(cause);
+    	this.code = code;
+    }
     /**
      * Passes the message to the parent, or the code if the message is null.
      * 
